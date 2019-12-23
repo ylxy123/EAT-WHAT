@@ -12,6 +12,8 @@ class Settings():
         # 定义背景颜色
         self.bg_color = (255, 255, 255)
         # 定义屏幕尺寸
-        self.screen_width = 600
-        self.screen_length = 800
+        self.screen_width = 800
+        self.screen_length = 600
+        # 该变量表示状态
+        self.status = 0
 
