@@ -6,10 +6,9 @@
 import pygame as pg
 
 class Botton(object):
-    def __init__(self, up_img, hang_img, down_img, position):
+    def __init__(self, up_img, hang_img, position):
         self.Up_img = pg.image.load(up_img).convert_alpha()
         self.Hang_img = pg.image.load(hang_img).convert_alpha()
-        self.Down_img = pg.image.load(down_img).convert_alpha()
         self.position = position
 
     # 判断鼠标是否在图片范围内；若是，返回True
@@ -26,12 +25,6 @@ class Botton(object):
 
         return in_x and in_y
 
-    # # 判断是否点击按钮
-    # def isClick(self):
-    #     self.mouseclick = False
-    #     for event in pg.event.get():
-    #         if event.type == pg.MOUSEBUTTONDOWN and self.isInBotton():
-    #             self.mouseclick = 1
 
     # 判断该显示哪张图
     def whichImg(self, screen):

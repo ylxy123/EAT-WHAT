@@ -10,7 +10,7 @@ import numpy as np
 class Settings():
     def __init__(self):
         # 定义背景颜色
-        self.bg_color = (255, 255, 255)
+        self.bg_color = (250, 230, 230)
         # 定义屏幕尺寸
         self.screen_width = 800
         self.screen_length = 600
