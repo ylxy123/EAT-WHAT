@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import tkinter as tk
 import time
 import pyautogui as gui
+import os
 
 # time.sleep(3)
 
@@ -27,17 +28,15 @@ root.title('获取指针实时位置')
 
 x, y = gui.position()
 # 窗口文本
-txt = tk.Label(root, text="↓下面显示实时位置↓")
+txt = tk.Label(root, text="↓下面显示实时位置↓").pack()
+position = "123"
+lb = tk.Label(root, textvariable=position).pack()
+time.sleep(1)
+lb["text"] = "456"
 
-# 获取键盘指针位置
-position = tk.Label(root, text="%d %d"%(x, y))
 
-# 窗口布局
-txt.pack()
-position.pack()
 
-# 由root窗口创建root1子窗口
-# root1 = tk.Toplevel(root)
+
 
 root.mainloop()
 

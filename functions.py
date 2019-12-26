@@ -36,7 +36,6 @@ def draw_start(screen_settings, screen):
     # 米线
     # 肯德基
     # 麻辣烫
-
     x, y = botton.position
     length, width = botton.Up_img.get_size()
     while True:
@@ -58,6 +57,8 @@ def draw_start(screen_settings, screen):
 
 # 监测转盘页的键鼠操作
 def check_circle_events(screen_settings, screen):
+    botton_start = Botton("./image/start_circle.png", "./image/start_circle_down.png", (400, 500))
+    botton_return = Botton("./image/return.png", "./image/return_down.png", (400, 500))
     for event in pg.event.get():
         if event.type == pg.QUIT:
             pg.quit()
@@ -66,12 +67,23 @@ def check_circle_events(screen_settings, screen):
             if event.type == pg.K_ESCAPE:
                 pg.quit()
                 sys.exit()
-        elif event.type == pg.MOUSEBUTTONDOWN:
+        elif event.type == pg.MOUSEBUTTONDOWN and botton_start.isInBotton():
+            pass
+        elif event.type == pg.MOUSEBUTTONDOWN and botton_return.isInBotton():
             pass
 
 
 # 转盘页
-def draw_circle():
-    botton_return = Botton()
+def draw_circle(screen_settings, screen):
+    botton_start = Botton("./image/start_circle.png", "./image/start_circle_down.png", (400, 400))
+    botton_return = Botton("./image/return.png","./image/return_down.png", (400, 500))
+    while True:
+        check_circle_events(screen_settings, screen)
+        screen.fill(screen_settings.bg_color)
+        botton_start.whichImg(screen)
+        botton_return.whichImg(screen)
+        if screen_settings.status == 0:
+            break;
+        pg.display.update()
 
 

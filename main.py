@@ -20,7 +20,7 @@ def start():
         if screen_settings.status == 0:
             fc.draw_start(screen_settings, screen)
         elif screen_settings.status == 1:
-            pass
+            fc.draw_circle(screen_settings, screen)
 
 
 if __name__ == "__main__":
