@@ -16,4 +16,6 @@ class Settings():
         self.screen_length = 600
         # 该变量表示状态
         self.status = 0
+        # 是否停止转盘
+        self.stop = False
 

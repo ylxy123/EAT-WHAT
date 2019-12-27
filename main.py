@@ -21,6 +21,8 @@ def start():
             fc.draw_start(screen_settings, screen)
         elif screen_settings.status == 1:
             fc.draw_circle(screen_settings, screen)
+        elif screen_settings.status == 2:
+            fc.start_circle(screen_settings, screen)
 
 
 if __name__ == "__main__":
